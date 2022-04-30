@@ -1,0 +1,21 @@
+{
+  "name": "eller-time-bot",
+  "version": "0.1.0-alpha",
+  "description": "Personal Discord Bot",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc -p .",
+    "start": "node ."
+  },
+  "keywords": [],
+  "authors": {
+    "yuange86": "yuange86"
+  },
+  "dependencies": {
+    "@discordjs/builders": "^0.13.0",
+    "@discordjs/rest": "^0.4.1",
+    "discord-api-types": "^0.32.0",
+    "discord.js": "^13.6.0",
+    "dotenv": "^16.0.0"
+  }
+}
