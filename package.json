@@ -4,8 +4,7 @@
   "description": "Personal Discord Bot",
   "main": "dist/index.js",
   "scripts": {
-    "preload for typescript": "npm install typescript",
-    "build": "tsc -p .",
+    "build": "npm install typescript | tsc -p .",
     "start": "node ."
   },
   "keywords": [],
