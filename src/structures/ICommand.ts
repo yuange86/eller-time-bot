@@ -12,14 +12,12 @@ type Builder = Omit<SlashCommandBuilder, "addSubcommandGroup" | "addSubcommand">
 export default class Commands {
     private _category: string;
     private _hasCategory: boolean;
-    private _requirements: string[];
     readonly builder: Builder;
     readonly run: RunFunction;
 
     constructor(builder: Builder, run: RunFunction) {
         this._category = "";
         this._hasCategory = false;
-        this._requirements = [];
 
         this.builder = builder;
         this.run = run;
@@ -39,10 +37,6 @@ export default class Commands {
 
     get hasCategory() {
         return this._hasCategory;
-    }
-
-    get requirements() {
-        return this.requirements;
     }
 }
 
