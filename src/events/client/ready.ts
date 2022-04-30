@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import roles from "../../db/roles";
 import Event from "../../structures/IEvent";
 
 export = new Event('ready', async () => {
@@ -9,6 +10,13 @@ export = new Event('ready', async () => {
             keepAlive: true
         }
     )
+
+    roles.updateOne({}, {
+        roles: [
+            "debugger",
+            "admin"
+        ]
+    });
 
     console.log("Ready!")
 })
