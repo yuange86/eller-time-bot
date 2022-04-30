@@ -4,6 +4,7 @@
   "description": "Personal Discord Bot",
   "main": "dist/index.js",
   "scripts": {
+    "preload for typescript": "npm install typescript",
     "build": "tsc -p .",
     "start": "node ."
   },
@@ -17,9 +18,5 @@
     "discord-api-types": "^0.32.0",
     "discord.js": "^13.6.0",
     "dotenv": "^16.0.0"
-  },
-  "devDependencies": {
-    "tsc": "^2.0.4"
-    
   }
 }
