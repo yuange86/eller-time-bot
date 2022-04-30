@@ -13,7 +13,10 @@ export = new Commands(
     async (client, interaction) => {
         if(interaction.commandName !== "clear") return;
         let amount = interaction.options.getNumber("amount");
-        if(amount === null) amount = 0;
+        if(amount === null) {
+            amount = 0
+            interaction.followUp(`no amout!`);
+        }
         
         if(amount >= 0) {
             try {
