@@ -21,7 +21,7 @@ export = new Commands(
         
         if(amount >= 0) {
             try {
-                (interaction.channel as TextChannel).bulkDelete(amount)
+                (interaction.channel as TextChannel).bulkDelete(amount + 1) //with last message of replying to this command
             } catch (err) {
                 interaction.followUp(`callback error: ${err}`)
             }
