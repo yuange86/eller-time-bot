@@ -1,10 +1,20 @@
 import roles from "../db/roles"
 
-export = () => {
-    roles.findOne({
-        roles: [
-            "admin",
-            "debugger"
-        ]
-    })
+const roles_that_relate_bot = [
+    "admin",
+    "debugger"
+];
+
+export = async () => {
+
+    const find = await roles.findOne();
+    if(find) {
+        roles.findOneAndUpdate({}, {
+            roles: roles_that_relate_bot
+        })
+    } else {
+        await new roles({
+            roles: roles_that_relate_bot
+        }).save();
+    }
 }
