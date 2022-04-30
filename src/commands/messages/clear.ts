@@ -16,6 +16,7 @@ export = new Commands(
         if(amount === null) {
             amount = 0
             interaction.followUp(`no amout!`);
+            return;
         }
         
         if(amount >= 0) {
