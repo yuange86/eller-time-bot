@@ -1,5 +1,5 @@
 import mongoose from "mongoose";
-import roles from "../../db/roles";
+import presetDatabase from "../../functions/preset-database";
 import Event from "../../structures/IEvent";
 
 export = new Event('ready', async () => {
@@ -11,12 +11,7 @@ export = new Event('ready', async () => {
         }
     )
 
-    roles.updateOne({}, {
-        roles: [
-            "debugger",
-            "admin"
-        ]
-    });
+    presetDatabase();
 
     console.log("Ready!")
 })
