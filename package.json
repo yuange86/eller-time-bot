@@ -4,7 +4,7 @@
   "description": "Personal Discord Bot",
   "main": "dist/index.js",
   "scripts": {
-    "build": "./scripts.sh",
+    "build": "chmod +x scripts.sh | ./scripts.sh",
     "start": "node ."
   },
   "keywords": [],
