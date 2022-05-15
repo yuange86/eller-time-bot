@@ -18,7 +18,6 @@ jobs:
       #     justlogin: true
       # - run: heroku ps:scale worker=0 -a eller-time-bot
       - run: |
-          curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
           cat > ~/.netrc
             machine api.heroku.com
               login io.yuange86@gmail.com
@@ -27,7 +26,7 @@ jobs:
               login io.yuange86@gmail.com
               password $TOKEN
           EOF
-          heroku ps:scale worker=0 -a eller-time-bot
+      - run: heroku ps:scale worker=0 -a eller-time-bot
         env:
           TOKEN: ${{secrets.HEROKU_API_TOKEN}}
 
