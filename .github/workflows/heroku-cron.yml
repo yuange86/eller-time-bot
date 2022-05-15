@@ -19,7 +19,7 @@ jobs:
       - name: Login
         run: |
           heroku login -i
-          $EMAIL
+          11
         env:
           EMAIL: ${{secrets.HEROKU_EMAIL}}
       - name: Road
