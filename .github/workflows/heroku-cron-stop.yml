@@ -6,8 +6,6 @@ jobs:
   close-worker:
     runs-on: ubuntu-latest
     steps:
-      - name: create
-        run: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
       - name: apply
         run: HEROKU_API_KEY='82a6c19a-ed35-4ced-b029-bae9559995a9' heroku ps:scale worker=0 -a eller-time-bot
         env:
