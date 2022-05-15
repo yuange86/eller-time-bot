@@ -6,10 +6,11 @@ jobs:
   close-worker:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
           heroku_api_key: ${{secrets.HEROKU_API_KEY}}
           heroku_app_name: "eller-time-bot"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
-        run: "heroku ps:scale worker=0 --app eller-time-bot"
+      - run: "heroku ps:scale worker=0 --app eller-time-bot"
