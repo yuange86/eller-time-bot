@@ -9,10 +9,9 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Deploying to Heroku
-        env:
-          TOKEN: ${{ secrets.HEROKU_TOKEN }}
-          APP: eller-time-bot
-        run: |
-          git remote add heroku https://heroku:$TOKEN@git.heroku.com/$APP.git
-          git push heroku HEAD:master -f
+      - name: deploy to heroku
+        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: "eller-time-bot" #Must be unique in Heroku
+          heroku_email: "io.yuange86@gmail.com"
