@@ -1,6 +1,8 @@
 name: Heroku-Cron
 on:
-  schedule: [{cron: "0 8 * * *"}]
+  schedule: 
+    cron: "0 8 * * *"
+    timezone: "Asia/Seoul"
   workflow_dispatch:
   push:
     branches:

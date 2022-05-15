@@ -1,6 +1,8 @@
 name: Heroku-Stop
 on:
-  schedule: [{cron: "0 20 * * *"}]
+  schedule: 
+    cron: "0 8 * * *"
+    timezone: "Asia/Seoul"
 
 jobs:
   close-worker:
