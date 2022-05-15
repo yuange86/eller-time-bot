@@ -35,6 +35,6 @@ jobs:
       - name: apply
         run: HEROKU_API_KEY='$HEROKU_API_TOKEN' heroku whoami
         env:
-          TOKEN: ${{secrets.HEROKU_API_TOKEN}}
+          HEROKU_API_KEY: ${{secrets.HEROKU_API_TOKEN}}
 
         
