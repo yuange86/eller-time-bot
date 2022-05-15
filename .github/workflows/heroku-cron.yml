@@ -29,5 +29,5 @@ jobs:
         env:
           HEROKU_KEY: ${{secrets.HEROKU_API_TOKEN}}
           HEROKU_EMAIL: ${{secrets.HEROKU_EMAIL}}
-      - run: heroku auth:whoami
+      # - run: heroku auth:whoami
       - run: heroku ps:scale worker=1 --app eller-time-bot
