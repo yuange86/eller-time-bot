@@ -10,4 +10,4 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
-      - run: "heroku ps:scale worker=1"
+      - run: "heroku ps:scale worker=1 --app eller-time-bot"
