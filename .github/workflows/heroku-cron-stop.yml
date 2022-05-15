@@ -1,0 +1,9 @@
+name: Heroku-Stop
+on:
+  schedule: [{cron: "0 20 * * *"}]
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "heroku ps:scale worker=0"

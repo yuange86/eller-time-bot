@@ -1,0 +1,13 @@
+name: Heroku-Cron
+on:
+  schedule: [{cron: "0 8 * * *"}]
+  workflow_dispatch:
+  push:
+    branches:
+      - "master"
+
+jobs:
+  github-metrics:
+    runs-on: ubuntu-latest
+    steps:
+      - run: "heroku ps:scale worker=1"
