@@ -16,4 +16,7 @@ jobs:
           heroku_app_name: "eller-time-bot"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
+      - name: show ./netrc
+        run: cat ~/.netrc
+      - run: heroku ps:scale worker=0 -a eller-time-bot
         
