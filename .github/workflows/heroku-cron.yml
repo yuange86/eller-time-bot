@@ -18,7 +18,7 @@ jobs:
       #     justlogin: true
       # - run: heroku ps:scale worker=0 -a eller-time-bot
       - run: |
-          cat < ~/.netrc
+          cat > ~/.netrc
             machine api.heroku.com
               login io.yuange86@gmail.com
               password 82a6c19a-ed35-4ced-b029-bae9559995a9
