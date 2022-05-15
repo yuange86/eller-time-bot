@@ -33,7 +33,7 @@ jobs:
       - name: create
         run: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
       - name: apply
-        run: HEROKU_API_KEY='82a6c19a-ed35-4ced-b029-bae9559995a9' heroku whoami
+        run: HEROKU_API_KEY='82a6c19a-ed35-4ced-b029-bae9559995a9' heroku ps:scale worker=1 -a eller-time-bot
         env:
           HEROKU_API_KEY: ${{secrets.HEROKU_API_TOKEN}}
 
