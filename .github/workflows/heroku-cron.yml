@@ -30,11 +30,9 @@ jobs:
         # env:
         #   HEROKU_KEY: ${{secrets.HEROKU_API_TOKEN}}
         #   HEROKU_EMAIL: ${{secrets.HEROKU_EMAIL}}
-      - name: Login
+      - name: Open
         run: |
           heroku ps:scale worker=1 --app eller-time-bot
-            $HEROKU_EMAIL
-            $HEROKU_KEY
         env:
           HEROKU_KEY: ${{secrets.HEROKU_API_TOKEN}}
           HEROKU_EMAIL: ${{secrets.HEROKU_EMAIL}}
