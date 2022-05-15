@@ -10,12 +10,12 @@ jobs:
   open-worker:
     runs-on: ubuntu-latest
     steps:
-      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-        with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-          heroku_app_name: "eller-time-bot"
-          heroku_email: ${{secrets.HEROKU_EMAIL}}
-          justlogin: true
+      # - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      #   with:
+      #     heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+      #     heroku_app_name: "eller-time-bot"
+      #     heroku_email: ${{secrets.HEROKU_EMAIL}}
+      #     justlogin: true
       # - run: heroku ps:scale worker=0 -a eller-time-bot
       # - run: |
       #     cat > ~/.netrc
@@ -29,9 +29,9 @@ jobs:
       # - run: heroku ps:scale worker=0 -a eller-time-bot
       #   env:
       #     TOKEN: ${{secrets.HEROKU_API_TOKEN}}
-
-      # - name: create
-      #   run: heroku authorizations:create
+      
+      - name: create
+        run: curl https://cli-assets.heroku.com/install-ubuntu.sh | sh
       - name: apply
         run: HEROKU_API_KEY='$HEROKU_API_TOKEN' heroku whoami
         env:
