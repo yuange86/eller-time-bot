@@ -1,7 +1,7 @@
 name: Heroku-Stop
 on:
   schedule: 
-    - cron: "0 8 * * *" # timezone : Asia/Sepul  --  UTF +9:00
+    - cron: "0 11 * * *" # timezone : Asia/Sepul  --  UTF +9:00
 
 jobs:
   close-worker:
