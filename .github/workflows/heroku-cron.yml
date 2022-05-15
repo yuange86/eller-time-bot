@@ -16,7 +16,7 @@ jobs:
       #     heroku_app_name: "eller-time-bot"
       #     heroku_email: ${{secrets.HEROKU_EMAIL}}
       #     justlogin: true
-      - name: Login to Heroku
+      - name: Login to Heroku and open worker
         run: |
           cat > ~/.netrc << EOF
             machine api.heroku.com
@@ -26,8 +26,9 @@ jobs:
               login $HEROKU_EMAIL
               password $HEROKU_API_KEY
           EOF
+          heroku ps:scale worker=1 --app eller-time-bot
         env:
           HEROKU_KEY: ${{secrets.HEROKU_API_TOKEN}}
           HEROKU_EMAIL: ${{secrets.HEROKU_EMAIL}}
       # - run: heroku auth:whoami
-      - run: heroku ps:scale worker=1 --app eller-time-bot
+      # - run: heroku ps:scale worker=1 --app eller-time-bot
