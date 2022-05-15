@@ -10,4 +10,7 @@ jobs:
   github-metrics:
     runs-on: ubuntu-latest
     steps:
+      - run: "heroku login -i"
+      - run: "{{secrets.HEROKU_EMAIL}}"
+      - run: "{{secrets.HEROKU_PASSWORD}}"
       - run: "heroku ps:scale worker=1 --app eller-time-bot"
