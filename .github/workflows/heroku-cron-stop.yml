@@ -12,4 +12,4 @@ jobs:
           heroku_app_name: "eller-time-bot"
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
-      - run: "heroku ps:scale worker=0 --app eller-time-bot"
+        run: "heroku ps:scale worker=0 --app eller-time-bot"
