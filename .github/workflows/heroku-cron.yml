@@ -29,8 +29,9 @@ jobs:
       # - run: heroku ps:scale worker=0 -a eller-time-bot
       #   env:
       #     TOKEN: ${{secrets.HEROKU_API_TOKEN}}
-      - name: create
-        run: heroku authorizations:create
+      
+      # - name: create
+      #   run: heroku authorizations:create
       - name: apply
         run: HEROKU_API_KEY='$HEROKU_API_TOKEN' heroku whoami
         env:
