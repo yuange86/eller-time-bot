@@ -17,7 +17,11 @@ jobs:
           heroku_email: ${{secrets.HEROKU_EMAIL}}
           justlogin: true
       - name: Login
-        run: heroku login -i
+        run: |
+          heroku login -i
+          $EMAIL
+        env:
+          EMAIL: ${{secrets.HEROKU_EMAIL}}
       - name: Road
         run: heroku git:clone -a eller-time-bot
       - name: Open
