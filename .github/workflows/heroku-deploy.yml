@@ -10,11 +10,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - name: add heroku remote
-        run : "git remote add heroku https://git.heroku.com/eller-time-bot.git" 
-      - name: deploy to heroku
-        uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
+      - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
         with:
-          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_api_key: ${{secrets.HEROKU_API_TOKEN}}
           heroku_app_name: "eller-time-bot" #Must be unique in Heroku
-          heroku_email: "io.yuange86@gmail.com"
+          heroku_email: ${{secrets.HEROKU_EMAIL}} 
