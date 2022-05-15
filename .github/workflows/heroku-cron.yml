@@ -17,16 +17,22 @@ jobs:
       #     heroku_email: ${{secrets.HEROKU_EMAIL}}
       #     justlogin: true
       # - run: heroku ps:scale worker=0 -a eller-time-bot
-      - run: |
-          cat > ~/.netrc
-            machine api.heroku.com
-              login io.yuange86@gmail.com
-              password $TOKEN
-            machine git.heroku.com
-              login io.yuange86@gmail.com
-              password $TOKEN
-          EOF
-      - run: heroku ps:scale worker=0 -a eller-time-bot
+      # - run: |
+      #     cat > ~/.netrc
+      #       machine api.heroku.com
+      #         login io.yuange86@gmail.com
+      #         password $TOKEN
+      #       machine git.heroku.com
+      #         login io.yuange86@gmail.com
+      #         password $TOKEN
+      #     EOF
+      # - run: heroku ps:scale worker=0 -a eller-time-bot
+      #   env:
+      #     TOKEN: ${{secrets.HEROKU_API_TOKEN}}
+      - name: create
+        run: heroku authorizations:create
+      - name: apply
+        run: HEROKU_API_KEY='$HEROKU_API_TOKEN' heroku whoami
         env:
           TOKEN: ${{secrets.HEROKU_API_TOKEN}}
 
