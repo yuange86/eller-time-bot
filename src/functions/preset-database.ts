@@ -1,4 +1,4 @@
-import roles from "../db/roles"
+import roles from "../db/schemas/roles"
 
 const roles_that_relate_bot = [
     "admin",

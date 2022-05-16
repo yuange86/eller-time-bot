@@ -11,7 +11,7 @@ export = new Event('ready', async () => {
         }
     )
 
-    presetDatabase();
+    await presetDatabase();
 
     console.log("Ready!")
 })
